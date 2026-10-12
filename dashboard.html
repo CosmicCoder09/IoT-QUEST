@@ -1,0 +1,457 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | IoT Quest</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        ⚡ IoT Quest
+    </div>
+
+
+    <nav>
+
+       <a href="dashboard.html">
+        Dashboard
+    </a>
+
+    <a href="#learning-modules">
+        Learn
+    </a>
+
+    <a href="module1.html">
+        Missions
+    </a>
+
+    <a href="#your-progress">
+        Achievements
+    </a>
+
+    </nav>
+
+
+    <button
+        class="login-btn"
+        onclick="logout()">
+
+        Logout
+
+    </button>
+
+</header>
+
+
+
+<!-- =========================
+     DASHBOARD
+========================= -->
+
+<main class="dashboard">
+
+
+    <!-- Welcome -->
+
+    <section class="welcome">
+
+        <div>
+
+            <p class="section-tag">
+                STUDENT DASHBOARD
+            </p>
+
+            <h1>
+                Welcome,
+                <span id="dashboardName">
+                    Explorer
+                </span>
+                👋
+            </h1>
+
+            <p>
+                Continue your IoT learning adventure
+                and unlock new levels.
+            </p>
+
+        </div>
+
+<div class="level-card">
+
+    <div class="level-number">
+        Level 1
+    </div>
+
+    <div class="level-title">
+        IoT Beginner
+    </div>
+
+    <p>
+        Start your IoT learning journey and earn XP
+        by completing lessons and quizzes.
+    </p>
+
+    <div class="level-xp">
+        ⭐ XP:
+        <span id="xpDisplay">0</span>
+    </div>
+
+</div>
+
+    </section>
+
+
+
+    <!-- =========================
+         STAT CARDS
+    ========================= -->
+
+    <section class="dashboard-stats">
+
+
+        <div class="dash-card">
+
+            <div class="dash-icon">
+                ⭐
+            </div>
+
+            <div>
+
+                <p>Total XP</p>
+
+                <h2 id="totalXP">
+    0
+</h2>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="dash-card">
+
+            <div class="dash-icon">
+                🔥
+            </div>
+
+            <div>
+
+                <p>Learning Streak</p>
+
+                <h2>
+                    1 Day
+                </h2>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="dash-card">
+
+            <div class="dash-icon">
+                🏆
+            </div>
+
+            <div>
+
+                <p>Badges</p>
+
+                <h2>
+                    0
+                </h2>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="dash-card">
+
+            <div class="dash-icon">
+                📚
+            </div>
+
+            <div>
+
+                <p>Modules</p>
+
+                <h2>
+                    0 / 6
+                </h2>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         XP PROGRESS
+    ========================= -->
+
+<section class="progress-section" id="your-progress">
+        <div class="progress-header">
+
+            <div>
+
+                <p class="section-tag">
+                    YOUR PROGRESS
+                </p>
+
+               <h2 id="progressLevelTitle">
+    IoT Beginner
+</h2>
+
+            </div>
+
+            <strong>
+                <strong>
+    <span id="xpProgress">
+        0 / 100 XP
+    </span>
+</strong>
+        </div>
+
+
+        <div class="big-xp-bar">
+
+            <div id="xpBar">
+            </div>
+
+        </div>
+
+    </section>
+
+
+<!-- ========================================
+     LEARNING MODULES
+======================================== -->
+
+<section class="learning-section" id= "learning-modules">
+
+    <h2>📚 Learning Modules</h2>
+
+    <p class="section-subtitle">
+        Complete modules, earn XP and unlock new challenges.
+    </p>
+
+
+    <!-- MODULE 1 -->
+
+    <div class="module-item active-module">
+
+        <div class="module-icon">
+            🌐
+        </div>
+
+        <div class="module-info">
+
+            <h3>
+                Module 1: Introduction to IoT
+            </h3>
+
+            <p>
+                Learn the basics of IoT, sensors,
+                microcontrollers and communication.
+            </p>
+
+            <button
+                class="module-btn"
+                onclick="window.location.href='module1.html'">
+
+                Start Learning →
+
+            </button>
+
+        </div>
+
+    </div>
+
+<!-- MODULE 2 -->
+
+<div
+    class="module-item locked-module"
+    id="module2">
+
+    <div class="module-icon">
+        🔒
+    </div>
+
+    <div class="module-info">
+
+        <h3>
+            Module 2: Sensors & Actuators
+        </h3>
+
+        <p id="module2Message">
+            🔒 Complete Module 1 and earn 100 XP
+            to unlock this module.
+        </p>
+
+        <button
+            id="module2Button"
+            class="module-btn"
+            disabled>
+
+            🔒 Locked
+
+        </button>
+
+    </div>
+
+</div>
+    <!-- MODULE 3 -->
+
+<div
+    class="module-item locked-module"
+    id="module3">
+
+    <div class="module-icon">
+        🔒
+    </div>
+
+    <div class="module-info">
+
+        <h3>
+            Module 3: Microcontrollers
+        </h3>
+
+        <p id="module3Message">
+            🔒 Earn 300 XP to unlock this module.
+        </p>
+
+        <button
+            id="module3Button"
+            class="module-btn"
+            disabled>
+
+            🔒 Locked
+
+        </button>
+
+    </div>
+
+</div>
+<!-- MODULE 4 -->
+
+<div
+    class="module-item locked-module"
+    id="module4">
+
+    <div class="module-icon">
+        🔒
+    </div>
+
+    <div class="module-info">
+
+        <h3>
+            Module 4: Communication & Networking
+        </h3>
+
+        <p id="module4Message">
+            🔒 Earn 400 XP to unlock this module.
+        </p>
+
+        <button
+            id="module4Button"
+            class="module-btn"
+            disabled>
+
+            🔒 Locked
+
+        </button>
+
+    </div>
+
+</div>
+</section>
+   
+
+
+</main>
+
+
+<script src="script.js"></script>
+<script>
+
+// ========================================
+// MODULE 4 UNLOCK
+// ========================================
+
+const module4 = document.getElementById("module4");
+const module4Button = document.getElementById("module4Button");
+const module4Message = document.getElementById("module4Message");
+
+const currentXP = Number(
+    localStorage.getItem("iotXP") || 0
+);
+
+if (module4 && module4Button) {
+
+    if (currentXP >= 400) {
+
+        module4.classList.remove("locked-module");
+        module4.classList.add("unlocked-module");
+
+        const icon = module4.querySelector(".module-icon");
+
+        if (icon) {
+            icon.textContent = "🔓";
+        }
+
+        if (module4Message) {
+            module4Message.textContent =
+                "🎉 Module unlocked! Learn about IoT communication and networking.";
+        }
+
+        module4Button.disabled = false;
+
+        module4Button.textContent =
+            "Start Module →";
+
+        module4Button.classList.add(
+            "unlocked-button"
+        );
+
+        module4Button.onclick = function () {
+
+            window.location.href =
+                "module4.html";
+
+        };
+
+    }
+}
+
+</script>
+
+</body>
+
+</html>
+

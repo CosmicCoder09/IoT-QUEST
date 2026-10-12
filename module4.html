@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Module 4 - Communication & Networking</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        🚀 IoT Quest
+    </div>
+
+    <div class="nav-links">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="index.html">Home</a>
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     MODULE HEADER
+========================= -->
+
+<section class="module-header">
+
+    <div>
+
+        <p class="module-label">
+            MODULE 4
+        </p>
+
+        <h1>
+            Communication & Networking
+        </h1>
+
+        <p>
+            Learn how IoT devices communicate with each other
+            and exchange information using different technologies.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     LESSON CONTENT
+========================= -->
+
+<section class="lesson-container">
+
+
+    <!-- LESSON 1 -->
+
+    <div class="lesson-card">
+
+        <h2>
+            🌐 What is IoT Communication?
+        </h2>
+
+        <p>
+            IoT communication is the process through which
+            IoT devices exchange data with other devices,
+            controllers, servers and cloud platforms.
+        </p>
+
+        <p>
+            Communication technologies allow sensors to send
+            collected data and allow controllers or cloud
+            systems to send commands back to devices.
+        </p>
+
+    </div>
+
+
+    <!-- LESSON 2 -->
+
+    <div class="lesson-card">
+
+        <h2>
+            📶 Wi-Fi
+        </h2>
+
+        <p>
+            Wi-Fi is a wireless communication technology that
+            allows IoT devices to connect to the internet or
+            a local network.
+        </p>
+
+        <h3>
+            Advantages
+        </h3>
+
+        <ul>
+
+            <li>🌐 Provides internet connectivity</li>
+
+            <li>⚡ Supports high data transfer speeds</li>
+
+            <li>🏠 Commonly used in smart homes</li>
+
+        </ul>
+
+        <h3>
+            Example
+        </h3>
+
+        <p>
+            A smart camera can use Wi-Fi to send video data
+            to a cloud server.
+        </p>
+
+    </div>
+
+
+    <!-- LESSON 3 -->
+
+    <div class="lesson-card">
+
+        <h2>
+            🔵 Bluetooth
+        </h2>
+
+        <p>
+            Bluetooth is a short-range wireless communication
+            technology used to exchange data between nearby
+            devices.
+        </p>
+
+        <h3>
+            Features
+        </h3>
+
+        <ul>
+
+            <li>📱 Short communication range</li>
+
+            <li>🔋 Low power consumption</li>
+
+            <li>🔗 Useful for nearby IoT devices</li>
+
+        </ul>
+
+        <h3>
+            Example
+        </h3>
+
+        <p>
+            A fitness band can use Bluetooth to send
+            activity information to a smartphone.
+        </p>
+
+    </div>
+
+
+    <!-- LESSON 4 -->
+
+    <div class="lesson-card">
+
+        <h2>
+            📡 LoRa / LoRaWAN
+        </h2>
+
+        <p>
+            LoRa is a wireless communication technology designed
+            for long-range communication with low power
+            consumption.
+        </p>
+
+        <p>
+            LoRaWAN is a communication protocol that uses
+            LoRa technology for connecting IoT devices
+            over long distances.
+        </p>
+
+        <h3>
+            Applications
+        </h3>
+
+        <ul>
+
+            <li>🌾 Smart agriculture</li>
+
+            <li>🏙️ Smart cities</li>
+
+            <li>💧 Water monitoring</li>
+
+            <li>🌡️ Environmental monitoring</li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- LESSON 5 -->
+
+    <div class="lesson-card">
+
+        <h2>
+            📬 MQTT
+        </h2>
+
+        <p>
+            MQTT stands for Message Queuing Telemetry Transport.
+            It is a lightweight messaging protocol commonly
+            used in IoT systems.
+        </p>
+
+        <p>
+            MQTT uses a publisher, broker and subscriber model
+            to exchange messages between devices.
+        </p>
+
+        <h3>
+            MQTT Components
+        </h3>
+
+        <ul>
+
+            <li>
+                📤 Publisher – sends the message
+            </li>
+
+            <li>
+                🖥️ Broker – receives and distributes messages
+            </li>
+
+            <li>
+                📥 Subscriber – receives the message
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- COMMUNICATION FLOW -->
+
+    <div class="lesson-card">
+
+        <h2>
+            🔄 IoT Communication Flow
+        </h2>
+
+        <p>
+            A basic IoT communication system can work as follows:
+        </p>
+
+        <div class="iot-flow">
+
+            <div class="flow-box">
+
+                📡
+
+                <strong>
+                    Sensor
+                </strong>
+
+                <span>
+                    Collects data
+                </span>
+
+            </div>
+
+
+            <div class="flow-arrow">
+                →
+            </div>
+
+
+            <div class="flow-box">
+
+                📶
+
+                <strong>
+                    Network
+                </strong>
+
+                <span>
+                    Transfers data
+                </span>
+
+            </div>
+
+
+            <div class="flow-arrow">
+                →
+            </div>
+
+
+            <div class="flow-box">
+
+                ☁️
+
+                <strong>
+                    Cloud
+                </strong>
+
+                <span>
+                    Stores data
+                </span>
+
+            </div>
+
+
+            <div class="flow-arrow">
+                →
+            </div>
+
+
+            <div class="flow-box">
+
+                📱
+
+                <strong>
+                    User
+                </strong>
+
+                <span>
+                    Views information
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- REAL WORLD EXAMPLE -->
+
+    <div class="lesson-card">
+
+        <h2>
+            🏠 Real-World Example: Smart Home
+        </h2>
+
+        <p>
+            Consider a smart home temperature monitoring system.
+            A temperature sensor collects the room temperature.
+            The device sends the data through a communication
+            network to a cloud platform.
+        </p>
+
+        <p>
+            The user can then view the temperature using a
+            smartphone application.
+        </p>
+
+    </div>
+
+
+    <!-- QUIZ -->
+
+    <div class="quiz-start-card">
+
+        <h2>
+            🎯 Module 4 Challenge
+        <!-- MODULE 4 CHALLENGE -->
+
+<div class="quiz-start-card">
+
+    <h2>
+        🎯 Module 4 Challenge
+    </h2>
+
+    <p>
+        Test your knowledge of IoT communication
+        and networking.
+    </p>
+
+    <p class="xp-reward">
+        ⭐ Maximum Reward: 100 XP
+    </p>
+
+    <a
+        href="quiz4.html"
+        class="primary-btn"
+        style="display: inline-block; text-decoration: none;">
+
+        Start Module 4 Quiz 🚀
+
+    </a>
+
+</div>
+           
+
+    </div>
+    
+</section>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

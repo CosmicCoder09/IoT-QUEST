@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Module 3 Quiz - IoT Quest</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        .quiz-page {
+            min-height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .quiz-container {
+            width: 100%;
+            max-width: 800px;
+            background: white;
+            color: #111827;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        #questionNumber3 {
+            color: #6366f1;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        #question3 {
+            color: #111827;
+            font-size: 28px;
+            line-height: 1.4;
+            margin: 25px 0;
+            display: block;
+            visibility: visible;
+            opacity: 1;
+        }
+
+        #options3 {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .quiz-option {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #d1d5db;
+            border-radius: 10px;
+            background: white;
+            color: #111827;
+            font-size: 16px;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .quiz-option:hover {
+            border-color: #6366f1;
+        }
+
+        .quiz-option.correct {
+            background: #dcfce7;
+            border-color: #22c55e;
+            color: #166534;
+        }
+
+        .quiz-option.wrong {
+            background: #fee2e2;
+            border-color: #ef4444;
+            color: #991b1b;
+        }
+
+        .quiz-option:disabled {
+            cursor: not-allowed;
+        }
+
+        #nextButton3 {
+            margin-top: 25px;
+        }
+
+        #quizResult3 {
+            color: #111827;
+            text-align: center;
+            margin-top: 25px;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 1.6;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header class="navbar">
+
+    <div class="logo">
+        ⚡ IoT Quest
+    </div>
+
+    <div class="nav-links">
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+    </div>
+
+</header>
+
+
+<section class="quiz-page">
+
+    <div class="quiz-container">
+
+        <p id="questionNumber3">
+            Question 1 of 5
+        </p>
+
+        <h1 id="question3">
+            Loading question...
+        </h1>
+
+        <div id="options3"></div>
+
+        <button
+            id="nextButton3"
+            class="primary-btn">
+
+            Next Question →
+
+        </button>
+
+        <div id="quizResult3"></div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+const questions = [
+
+    {
+        question: "What is a microcontroller?",
+
+        options: [
+            "A small computer used to control electronic devices",
+            "A type of internet connection",
+            "A database used to store websites",
+            "A wireless communication protocol"
+        ],
+
+        answer: 0
+    },
+
+
+    {
+        question:
+        "Which board is commonly used for IoT projects and has built-in Wi-Fi and Bluetooth?",
+
+        options: [
+            "ESP32",
+            "Arduino Uno",
+            "VGA",
+            "HDMI"
+        ],
+
+        answer: 0
+    },
+
+
+    {
+        question:
+        "What is the main function of a microcontroller in an IoT system?",
+
+        options: [
+            "Only display information",
+            "Process inputs and control outputs",
+            "Only provide internet access",
+            "Only store photographs"
+        ],
+
+        answer: 1
+    },
+
+
+    {
+        question:
+        "Which of the following can be connected to a microcontroller as an input?",
+
+        options: [
+            "Temperature sensor",
+            "LED",
+            "Motor",
+            "Buzzer"
+        ],
+
+        answer: 0
+    },
+
+
+    {
+        question:
+        "Which component can be controlled by a microcontroller to perform a physical action?",
+
+        options: [
+            "Sensor",
+            "Actuator",
+            "Wi-Fi signal",
+            "Database"
+        ],
+
+        answer: 1
+    }
+
+];
+
+
+let currentQuestion = 0;
+let score = 0;
+let selectedAnswer = false;
+
+
+const questionNumber =
+    document.getElementById("questionNumber3");
+
+const questionText =
+    document.getElementById("question3");
+
+const optionsContainer =
+    document.getElementById("options3");
+
+const nextButton =
+    document.getElementById("nextButton3");
+
+const result =
+    document.getElementById("quizResult3");
+
+
+function loadQuestion() {
+
+    selectedAnswer = false;
+
+    const q = questions[currentQuestion];
+
+
+    questionNumber.textContent =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+
+    questionText.textContent =
+        q.question;
+
+
+    optionsContainer.innerHTML = "";
+
+
+    q.options.forEach(
+        function(option, index) {
+
+            const button =
+                document.createElement("button");
+
+
+            button.textContent =
+                option;
+
+
+            button.className =
+                "quiz-option";
+
+
+            button.onclick =
+                function() {
+
+                    selectAnswer(
+                        index,
+                        button
+                    );
+
+                };
+
+
+            optionsContainer.appendChild(button);
+
+        }
+    );
+
+}
+
+
+function selectAnswer(index, button) {
+
+    if (selectedAnswer) {
+        return;
+    }
+
+
+    selectedAnswer = true;
+
+
+    const correct =
+        questions[currentQuestion].answer;
+
+
+    const buttons =
+        document.querySelectorAll(
+            "#options3 .quiz-option"
+        );
+
+
+    buttons.forEach(
+        function(btn) {
+
+            btn.disabled = true;
+
+        }
+    );
+
+
+    if (index === correct) {
+
+        button.classList.add("correct");
+
+        score++;
+
+    }
+    else {
+
+        button.classList.add("wrong");
+
+        buttons[correct]
+            .classList.add("correct");
+
+    }
+
+}
+
+
+nextButton.onclick =
+function() {
+
+    if (!selectedAnswer) {
+
+        alert(
+            "Please select an answer first."
+        );
+
+        return;
+
+    }
+
+
+    currentQuestion++;
+
+
+    if (
+        currentQuestion <
+        questions.length
+    ) {
+
+        loadQuestion();
+
+    }
+    else {
+
+        finishQuiz();
+
+    }
+
+};
+
+
+function finishQuiz() {
+
+    const xpEarned =
+        score * 20;
+
+
+    const alreadyCompleted =
+        localStorage.getItem(
+            "iotModule3Completed"
+        );
+
+
+    if (!alreadyCompleted) {
+
+        let currentXP =
+            Number(
+                localStorage.getItem(
+                    "iotXP"
+                ) || 0
+            );
+
+
+        currentXP =
+            currentXP + xpEarned;
+
+
+        localStorage.setItem(
+            "iotXP",
+            currentXP
+        );
+
+
+        localStorage.setItem(
+            "iotModule3Completed",
+            "true"
+        );
+
+    }
+
+
+    questionNumber.textContent =
+        "Quiz Completed";
+
+
+    questionText.textContent =
+        "Module 3 Completed! 🎉";
+
+
+    optionsContainer.innerHTML = "";
+
+
+    nextButton.style.display =
+        "none";
+
+
+    result.innerHTML =
+
+        "You scored " +
+        score +
+        " / " +
+        questions.length +
+
+        "<br><br>" +
+
+        "⭐ You earned " +
+        xpEarned +
+        " XP!" +
+
+        "<br><br>" +
+
+        "<button class='primary-btn' onclick='goDashboard()'>"+
+        "Go to Dashboard →"+
+        "</button>";
+
+}
+
+
+function goDashboard() {
+
+    window.location.href =
+        "dashboard.html";
+
+}
+
+
+loadQuestion();
+
+</script>
+
+
+</body>
+
+</html>
